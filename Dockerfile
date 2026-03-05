@@ -177,4 +177,4 @@ STOPSIGNAL SIGHUP
 ENTRYPOINT ["/entrypoint"]
 
 HEALTHCHECK --interval=60s --start-interval=20s --timeout=3s \
-  CMD curl -f http://localhost/ || exit 1
+  CMD wget --quiet --spider http://127.0.0.1:80 || exit 1
